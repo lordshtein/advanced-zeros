@@ -4,11 +4,9 @@ module.exports = function getZerosCount(number, base) {
   let secondBaseCount = 0;
   for (let j=2; j <= base; j++) {
     if (base === j) break;
-    //console.log(base,"first");
     while (base % j === 0) {
       base=base/j;
       x.push(base);
-      console.log(base,"second");
       if (base===j) break;
     } 
   }
@@ -20,15 +18,13 @@ module.exports = function getZerosCount(number, base) {
   }
   for (let a=0; a <=x.length-1; a++) {
     if (x[a] % 2 === 0) {
-      secondBaseCount +=1;
-      console.log(secondBaseCount);
+      secondBaseCount +=1;  
     }
   }
-  if (Math.pow(2,secondBaseCount) > Math.pow(base,basecount)) {
+  /*if (Math.pow(2,secondBaseCount) > Math.pow(base,basecount)) {
     base=2;
     basecount = secondBaseCount;
-  }
-  console.log(base,"base 2");
+  }*/
   let count=0;
     for (let i=base; i <= number; i=i*base) {
       count = count + Math.trunc(number/i);
